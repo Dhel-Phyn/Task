@@ -22,11 +22,19 @@
     width: 200px;
     float: left;
     height: 70px;
+    display: flex;
+}
+
+img{
+height: 35px;
+width: 40px;
+margin-top: 10px;
+border-radius:8px;
 }
 
 .logo{
   color:orangered;
-  font-size: 35px;
+  font-size: 25px;
   font-family: 'Roboto';
   padding-left: 20px;
   float: left;
@@ -50,7 +58,7 @@ ul{
 ul li{
   list-style: none;
   margin-left: 62px;
-  margin-top: 27px;
+  margin-top: 19px;
   font-size: 14px;
 }
 
@@ -83,6 +91,7 @@ ul li a:hover{
   font-size: 16px;
   float: left;
   padding: 10px;
+  border-radius: 20px;
 }
 
 .btn{
@@ -93,10 +102,28 @@ border: 2px solid orangered;
 margin-top: 13px;
 color: #fff;
 font-size: 15px;
+border-radius: 20px;
 } 
 
 .btn:focus{
   outline: none ;
+}
+
+.header__center {
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1.2rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.header__center::before,
+.header__center::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: orangered;
 }
 
 .srch :focus{
@@ -120,6 +147,12 @@ font-size: 15px;
   margin-top: 2%;
   letter-spacing: 2px;
 }
+
+  .content .imgs{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
 
 .content .cn{
   width: 160px;
@@ -176,7 +209,7 @@ font-size: 15px;
 }
 
 ::placeholder{
-  color: #000;
+  color: orangered;
   font-family: 'Poppins';
   padding: 15px;
 }
@@ -205,10 +238,10 @@ font-size: 15px;
   font-weight: bold ;
 }
 
-.form h5{
+/* .form h5{
   text-align: center;
   color: #fff;
-}
+} */
 
 
 .form .link{
@@ -236,7 +269,7 @@ font-size: 15px;
   background-color: #fff;
   border: 6px;
   border-radius: 5px;
-  margin-top: 70px;
+  margin-top: 1.5rem;
   margin-left: 25px;
 }
 
