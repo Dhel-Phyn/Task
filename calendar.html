@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Calendar</title>
+    <link rel="stylesheet" href="./css/calendar.css" />
+   </head>
+
+      <body>
+<div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./img/node.jpg" alt="" srcset="">
+              </span>
+              <span class="title">Node Eight</span>
+            </a> 
+            <!-- <a href=""></a> -->
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="cloud-upload"></ion-icon
+              ></span>
+              <span class="title">Dashbord</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <span class="title">Users</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="./team.html">
+              <span class="icon"> <ion-icon name="people"></ion-icon></span>
+              <span class="title">Teams</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="book"></ion-icon></span>
+              <span class="title">Time Table</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="list"></ion-icon></span>
+              <span class="title">To Do List</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"> <ion-icon name="calendar"></ion-icon></span>
+              <span class="title">Calendar</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"> <ion-icon name="clipboard"></ion-icon></span>
+              <span class="title">Notice Board</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="log-out"></ion-icon> </span>
+              <span class="title">Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div> 
+
+      <!-- main -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div> 
+
+          <!-- Search  -->
+           <div class="search">
+            <label>
+              <input type="text" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div> 
+
+          <!-- user Img -->
+          <div class="user">
+            <img src="./img/photo-.avif" />
+          </div>
+        </div>
+              
+                <div class="space"></div>
+
+            </div> 
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      // MenuToggle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+
+      // add hovered class in selection list item
+      let list = document.querySelectorAll(".navigation li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+    </script>
+  </body>
+</html>
+  

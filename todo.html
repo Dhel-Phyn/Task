@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Todo List</title>
+    <link rel="stylesheet" href=".//css/todo.css" />
+   </head>
+
+      <body>
+<div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./img/node.jpg" alt="" srcset="">
+              </span>
+              <span class="title">Node Eight</span>
+            </a> 
+            <!-- <a href=""></a> -->
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><ion-icon name="cloud-upload"></ion-icon
+              ></span>
+              <span class="title">Dashbord</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="person"></ion-icon></span>
+              <span class="title">Users</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="./team.html">
+              <span class="icon"> <ion-icon name="people"></ion-icon></span>
+              <span class="title">Teams</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="book"></ion-icon></span>
+              <span class="title">Time Table</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="list"></ion-icon></span>
+              <span class="title">To Do List</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"> <ion-icon name="calendar"></ion-icon></span>
+              <span class="title">Calendar</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"> <ion-icon name="clipboard"></ion-icon></span>
+              <span class="title">Notice Board</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><ion-icon name="log-out"></ion-icon> </span>
+              <span class="title">Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div> 
+
+      <!-- main -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div> 
+
+          <!-- Search  -->
+           <div class="search">
+            <label>
+              <input type="text" placeholder="Search" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div> 
+
+          <!-- user Img -->
+          <div class="user">
+            <img src="./img/photo-.avif" />
+          </div>
+        </div>
+
+            </div> 
+
+
+            <header>
+                <h1>Task List</h1>
+               <form id="new-task-form">
+                  <input 
+                      type="text"
+                        id="new-task-input"
+                          placeholder="Plans for the day" />
+                  <input 
+                        type="submit"
+                        id="new-task-submit"
+                        value="Add" />
+                 </form>
+            </header>
+
+
+            <main>
+              <section class="Todo">
+                    <h2>List</h2>
+
+                    <div id="tasks">
+
+                      <div class="task">
+                        <div class="content">
+                          <input 
+                                type="text"
+                                class="text"
+                                value="Meeting @ 8:30AM " />
+                        </div>
+                              <div class="actions">
+                                <button class="edit"> Edit</button>
+                                <button class="delete">Delete</button>
+                              </div>
+                      </div>
+
+                    </div>
+              </section>
+
+            </main>
+
+          <script src="./Todo.js"></script>cr
+  </body>
+</html>
+  

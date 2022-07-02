@@ -1,0 +1,380 @@
+:root{
+    --darkest: #111827;
+    --light: #eee;
+    --orange: #d85113;
+    --orangered:#3a1503;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background: url("./img/photo-.avif")no-repeat center/cover; */
+  min-height: 180vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: orangered;
+  border-left: 10px solid orangered;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li .hovered {
+  background: white;
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 60px;
+  pointer-events: none;
+  font-weight: bold;
+  font-family: "Poppins";
+  font-size: xx-large;
+  background: white;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: rgb(20, 6, 1);
+  font-weight: bold;
+}
+
+.navigation ul li:hover a,
+.navigation ul li .hovered a {
+  color: orangered;
+}
+
+.navigation .icon img {
+  width: 80px;
+  height: 60px;
+  margin-right: 40px;
+  padding-left: 2rem;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* curve outside */
+
+.navigation ul li:hover a::before,
+.navigation ul li .hovered a::before {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px white;
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li .hovered a::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px white;
+  pointer-events: none;
+}
+
+/* main */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: white;
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100px;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid black;
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header{
+  position: relative;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  /* background-image: linear-gradient(to right, var(--orange), var(--light)); */
+  /* -webkit-background-clip: text;
+  -webkit-animation-fill-color: transparent; */
+}
+
+header h1{
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #d85113;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#new-task-form{
+  display: grid;
+  align-items: center;
+  margin-top: 5rem;
+ margin-left: 5rem;
+}
+
+ input, button{
+  position: relative;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ #new-task-input{
+  position: absolute;
+  flex: 1 1 0%;
+  background-color: var(--orangered);
+  padding: 1em;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: var(--light);
+  font-size: 1.25rem;
+text-align: start;
+}
+
+#new-task-input::placeholder{
+    color: var(--orange);
+}
+
+#new-task-submit{
+  position: relative;
+  color: var(--orangered);
+  font-size: 700;
+  font-weight: 700;
+  background-image: linear-gradient(to right, var(--orange), var(--orangered));
+   -webkit-background-clip: text;
+  -webkit-animation-fill-color: transparent; 
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#new-task-submit:hover{
+  opacity: 0.8;
+}
+
+#new-task-submit:active{
+  opacity: 0.6;
+}
+ 
+main{
+  position: absolute;
+  flex: 1 1 0%;
+  padding: 2rem 1rem;
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 10vh;
+  margin-left: 41vh;
+  align-items: center;
+  text-align: center;
+}
+
+.Todo{
+  position: relative;
+  padding: 2rem;
+  text-align: start;
+}
+
+.Todo h2{
+  position: relative;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--orange);
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+}
+
+#tasks .task{
+  position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--orangered);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #tasks .task .content {
+    flex: 1 1 0%;
+  }
+
+  #tasks .task .content .text{
+    color: var(--light);
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+  }
+
+  #tasks .task .content .text:not(:read-only){
+    color: var(--orange);
+  }
+
+  #tasks .task .actions{
+    display: flex;
+    margin: 0 -0.5rem;
+  }
+
+  .task  .actions button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    transition: 0.4s;
+  }
+
+.task .actions button:hover{
+  opacity: 0.8;
+}
+
+.task .actions button:active{
+  opacity: 0.6;
+}
+
+.task .actions .edit{
+  background-image: linear-gradient(to right, var(--orange), var(--light));
+  -webkit-background-clip: text;
+  -webkit-animation-fill-color: transparent;
+}
+
+.task .actions .delete{
+    color: crimson;
+}
