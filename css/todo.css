@@ -295,7 +295,7 @@ text-align: start;
   opacity: 0.6;
 }
  
-main{
+#man{
   position: absolute;
   flex: 1 1 0%;
   padding: 2rem 1rem;
@@ -307,13 +307,13 @@ main{
   text-align: center;
 }
 
-.Todo{
+.task-list{
   position: relative;
   padding: 2rem;
   text-align: start;
 }
 
-.Todo h2{
+.task-list h2{
   position: relative;
       font-size: 1.5rem;
       font-weight: 300;
@@ -377,4 +377,27 @@ main{
 
 .task .actions .delete{
     color: crimson;
+}
+
+@media(max-width: 991px){
+  .navigation{
+    left: -300px;
+  }  
+
+    .navigation.active{
+      width: 300px;
+      left: 0;
+    }
+
+    .main{
+      width: 100%;
+      left: 0;
+    }
+
+  .main active{
+    left: 300;
+  }
+  .cardBox{
+    grid-template-columns: repeat(2,1fr);
+  }
 }

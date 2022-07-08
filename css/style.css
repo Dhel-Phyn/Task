@@ -164,6 +164,7 @@ border-radius: 20px;
   border-radius: 10px;
   cursor: pointer;
   transition: .4s ease;
+ margin-top: 59vh;
 }
 
 .content .cn a{
@@ -276,3 +277,50 @@ border-radius: 20px;
 .icon ion-icon:hover{
   color: orangered;
 }
+
+@media screen and (max-width:1200px){
+    .navbar{
+      height: 100px;
+    }
+
+    .menu {
+    width: 40px;
+    float: left;
+    height: 100%;
+  }
+
+    ul{
+      margin-right: 2vh;
+    }
+    ui li{
+      margin-left: 40px;
+    }
+    ul li a{
+      font-size: 0.9rem;
+    }
+
+    .search{
+      margin-bottom: 2rem;
+      margin-left: 67vh;
+      float: left;
+    }
+
+    .srch{
+        height: 20px;
+        width: 160px;
+        font-size: 14px;
+    }
+
+    .btn{
+      height: 23px;
+      width: 80px;
+    }
+
+    .content{
+      width: 100%;
+    }
+
+    .content h1{
+      font-size: 1.5vw; 
+    }
+  }

@@ -20,7 +20,7 @@
           </li>
 
           <li>
-            <a href="#">
+            <a href="./dash.html">
               <span class="icon"
                 ><ion-icon name="cloud-upload"></ion-icon
               ></span>
@@ -57,7 +57,7 @@
           </li>
 
           <li>
-            <a href="#">
+            <a href="./calendar.html">
               <span class="icon"> <ion-icon name="calendar"></ion-icon></span>
               <span class="title">Calendar</span>
             </a>
@@ -118,13 +118,13 @@
             </header>
 
 
-            <main>
-              <section class="Todo">
+            <main id="man">
+              <section class="task-list ">
                     <h2>List</h2>
 
                     <div id="tasks">
 
-                      <div class="task">
+                      <!-- <div class="task">
                         <div class="content">
                           <input 
                                 type="text"
@@ -135,14 +135,43 @@
                                 <button class="edit"> Edit</button>
                                 <button class="delete">Delete</button>
                               </div>
-                      </div>
+                      </div> -->
 
                     </div>
               </section>
 
             </main>
 
-          <script src="./Todo.js"></script>cr
+          <script src="./Todo.js"></script>
+          <script
+          type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+
+        <script>
+          // MenuToggle
+          let toggle = document.querySelector(".toggle");
+          let navigation = document.querySelector(".navigation");
+          let main = document.querySelector(".main");
+    
+          toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+          };
+    
+          // add hovered class in selection list item
+          let list = document.querySelectorAll(".navigation li");
+          function activeLink() {
+            list.forEach((item) => item.classList.remove("hovered"));
+            this.classList.add("hovered");
+          }
+          list.forEach((item) => item.addEventListener("mouseover", activeLink));
+        </script>
+
   </body>
 </html>
   

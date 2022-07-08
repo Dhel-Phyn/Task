@@ -226,7 +226,7 @@ body {
 }
 
 .cardBox .card {
-  height: 150%;
+  height: 100%;
   width: 100%;
   position: relative;
   background: white;
@@ -284,7 +284,7 @@ body {
 }
 
 .cardBoz .cards {
-  height: 150%;
+  height: 100%;
   width: 100%;
   position: relative;
   background: white;
@@ -324,5 +324,28 @@ body {
 
 .space{
   /* height: 100px; */
-  margin-top: 200px;
+  /* margin-top: 200px; */
+}
+
+@media(max-width: 991px){
+  .navigation{
+    left: -300px;
+  }  
+
+    .navigation.active{
+      width: 300px;
+      left: 0;
+    }
+
+    .main{
+      width: 100%;
+      left: 0;
+    }
+
+  .main active{
+    left: 300;
+  }
+  .cardBox{
+    grid-template-columns: repeat(2,1fr);
+  }
 }
