@@ -1,18 +1,14 @@
 <?php
-$email = $_POST["email"];
-$password = $_POST["password"];
+$servername = "localhost";
+$username = "root";
+$password = "";
 
-// DB Connection
-$conn = new mysqli('localhost', 'root', ' ', 'nodeDb');
-if($conn ->connect_error){
-  die('Connection Failied : ' .$conn->connect_errorr );
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
-else{
-  $stmt = $conn->prepare("insert into Admin(Email,Password) value( ? ,?)");
-  $stmt ->bind_param("ss", $email, $password);
-  $stmt ->execute();
-  echo "login sucessful";
-  $stmt ->close();
-  $conn ->close();  
-}
-?>
+echo "Connected successfully";
+?> 

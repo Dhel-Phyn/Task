@@ -4,12 +4,12 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: dash.html");
     exit;
 }
  
 // Include config file
-require_once "config.php";
+require_once "php/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: dash.html");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -94,26 +94,51 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <h2>Login<?php echo $action ?></h2>
-        <p>Please fill in your credentials to login.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dash.html">
+    <link rel="stylesheet" href="./css/style.css " />
 
-        <?php 
+    <title>Task</title>
+  </head>
+  <body>
+    
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <img src="./img/node.jpg" alt="">
+          <h2 class="logo">Node Eight</h2>
+        </div>
+
+        <div class="menu">
+           <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+           </ul>
+        </div>
+
+        <div class="search">
+          <input class="srch" type="search" name="" placeholder="Type to Search" >
+          <a href="#"> <button class="btn">Search</button></a>
+        </div>
+      </div>
+       
+      <div class="content">
+        <h1>Hello!, Welcome</h1>
+          <div class="imgs"><img src="./img/user1.png"></div>
+
+        <button class="cn"><a href="./php/register.php">SIGN UP</a></button>
+
+      <div class="form">
+      <?php 
         if(!empty($login_err)){
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
         }        
         ?>
-
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
@@ -128,8 +153,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="php/register.php">Sign up now</a>.</p>
         </form>
+       
+         
+          <header>
+            <div class="header__center">Or continue with</div>
+        </header>
+
+          <div class="icons">
+            <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          </div>
+            
+          <p class="link">Not a member? <span>Register Now</span> </p>
+
+        </div>
+      </div>
     </div>
-</body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  </body>
 </html>
